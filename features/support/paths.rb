@@ -15,13 +15,19 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /^the RottenPotatoes home\s?page$/
+      '/movies'
     when /^the details\s?page for "(.+)"$/
       m=Movie.find_by_title($1)
-      '/movies/'#+m.id.to_s
+      '/movies/'+m.id.to_s
     when /^the edit\s?page for "(.+)"$/
       m=Movie.find_by_title($1)
 #      puts m.id
       '/movies/'+m.id.to_s+'/edit'
+    when /^the Similar Movies page for "(.+)"$/
+      m=Movie.find_by_title($1)
+      '/movies/'+m.id.to_s+'/same_director'
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
