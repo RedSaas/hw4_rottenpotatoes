@@ -7,8 +7,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-    puts "flash!!!!!!!!!"
-    puts flash[:notice]
     sort = params[:sort] || session[:sort]
     case sort
     when 'title'
