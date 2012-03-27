@@ -11,7 +11,7 @@ end
 
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
-
+=begin
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.content  is the entire content of the page as a string.
@@ -39,6 +39,8 @@ Then /I should see all of the movies/ do
   
 #  assert false, "Unimplmemented"
 end
+
+=end
 
 Then /^the director of "(.*)" should be "(.*)"$/ do |arg1, arg2|
   arg1_index=page.text.index('Details about '+arg1)
@@ -135,7 +137,7 @@ end
 #    assert false, "Empty movie title"
 #  end
 #end
-
+=begin
 When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
@@ -150,3 +152,4 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
     end 
   end
 end
+=end
